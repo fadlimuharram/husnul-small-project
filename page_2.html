@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="page_2.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+		<title>Page_2</title>
+	</head>
+	<body>
+		<div class="container-2">
+			<div class="color">
+				<div class="image">
+					<div class="mySlides fade">
+						<img src="image.png" />
+					</div>
+					<div class="mySlides fade">
+						<img src="image4.jfif" />
+					</div>
+					<div class="mySlides fade">
+						<img src="image6.jpg" />
+					</div>
+				</div>
+				<div class="sliding">
+					<a class="prev" onclick="prevSlides()">&#10094;</a>
+					<a class="next" onclick="nextSlides()">&#10095;</a>
+				</div>
+			</div>
+			<br />
+			<div class="box">
+				<div class="awesome">
+					<i class="fa fa-shopping-cart logo" aria-hidden="true"></i>
+					<h1>GO BACK</h1>
+				</div>
+				<div class="text1">
+					<div class="name">
+						<h1>Black</h1>
+						<span> Kaca Mata Anti Radiasi </span>
+					</div>
+					<div class="harga">
+						<p>Rp.50.000</p>
+						<span>Rp.70.000</span>
+					</div>
+					<div class="paragraph">
+						<p>Kacamata tampan dan berani</p>
+						<br />
+						<p>
+							Kacamata difungsikan untuk menjadi tameng agar benda asing tidak masuk
+							ke mata Selain itu meskipun kacamata yang digunakan telah disesuaikan
+							dengan penyakit yang diderita tetapi ini hanya sementara sebelum
+							akhirnya lensa harus diganti lagi karena kelainan penglihatan meningkat
+						</p>
+					</div>
+					<div class="size">
+						<p>Size :</p>
+						<select>
+							<option>Medium</option>
+							<option>Small</option>
+							<option>Big</option>
+						</select>
+					</div>
+					<div class="mens">
+						<p>Pria<br />100% Cotton</p>
+					</div>
+					<div class="add">
+						<p>ADD TO CART</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<i class="fa fa-th" aria-hidden="true"></i>
+		</div>
+
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function nextSlides() {
+				showSlides((slideIndex += 1));
+			}
+
+			function prevSlides() {
+				showSlides((slideIndex -= 1));
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName('mySlides');
+				console.log('slides', slides);
+				console.log('n', n);
+				if (n > slides.length) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+				}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = 'none';
+				}
+
+				slides[slideIndex - 1].style.display = 'block';
+			}
+		</script>
+	</body>
+</html>
